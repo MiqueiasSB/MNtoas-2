@@ -21,6 +21,15 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+
+        'terms_accepted',
+        'config',
+        //'stripe_id',
+        //'pm_type',
+        //'pm_last_four',
+        //'trial_ends_at',
+        //'subscribed',
+        //'subscription_ends_at',
     ];
 
     /**
@@ -43,6 +52,7 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'config' => 'array',
         ];
     }
 }
