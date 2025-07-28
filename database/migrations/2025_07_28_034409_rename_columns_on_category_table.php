@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('category_transactions', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->string('nome');
-            $table->string('tipo');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade')->nullable();
+        Schema::rename('categoria_transacao', 'category_transactions');
+
+        Schema::table('category_transactions', function (Blueprint $table) {
+            $table->renameColumn('nome', 'name');
+            $table->renameColumn('tipo', 'type');
         });
     }
 
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('category_transactions');
+        //
     }
 };
