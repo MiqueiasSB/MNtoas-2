@@ -8,34 +8,11 @@ import { Head, Link } from '@inertiajs/vue3';
         <link rel="preconnect" href="https://rsms.me/" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     </Head>
-    <div
-        class="flex min-h-screen flex-col items-center bg-[#FDFDFC] p-6 text-[#1b1b18] lg:justify-center lg:p-8 dark:bg-[#0a0a0a]">
-        <header class="mb-6 w-full max-w-[335px] text-sm not-has-[nav]:hidden lg:max-w-4xl">
-            <nav class="flex items-center justify-end gap-4">
-                <Link v-if="$page.props.auth.user" :href="route('dashboard')"
-                    class="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]">
-                Dashboard
-                </Link>
-                <template v-else>
-                    <Link :href="route('login')"
-                        class="inline-block rounded-sm border border-transparent px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#19140035] dark:text-[#EDEDEC] dark:hover:border-[#3E3E3A]">
-                    Log in
-                    </Link>
-                    <Link :href="route('register')"
-                        class="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]">
-                    Register
-                    </Link>
-                </template>
-            </nav>
-        </header>
+    <div class="flex min-h-screen flex-col items-center lg:justify-center lg:p-8">
 
-        DaisyUI Dropdown Example
-        <details class="dropdown">
-            <summary class="btn m-1">open or close</summary>
-            <ul class="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                <li><a>Item 1</a></li>
-                <li><a>Item 2</a></li>
-            </ul>
-        </details>
+        <a :href="route('login')" class="btn btn-primary">Entrar</a>
+        <a :href="route('register')" class="btn btn-outline btn-primary">Cadastrar-se</a>
+        <a :href="route('dashboard')" class="btn btn-secondary">Painel</a>
+
     </div>
 </template>

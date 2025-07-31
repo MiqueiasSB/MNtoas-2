@@ -55,4 +55,9 @@ class User extends Authenticatable
             'config' => 'array',
         ];
     }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
 }
